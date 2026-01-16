@@ -4,16 +4,13 @@
 
 ## 1. 프로젝트 개요
 
-* 
-**CPU Attention**: 3중 루프를 사용한 기본적인 행렬 연산 구현.
+* **CPU Attention**: 3중 루프를 사용한 기본적인 행렬 연산 구현.
 
 
-* 
-**GPU Naive Attention**: Global Memory에 중간 결과(Score 행렬)를 직접 읽고 쓰는 방식.
+* **GPU Naive Attention**: Global Memory에 중간 결과(Score 행렬)를 직접 읽고 쓰는 방식.
 
 
-* 
-**GPU Flash Attention**: **Tiling**과 **Online Softmax** 기법을 사용하여 SRAM(Shared Memory) 활용을 극대화하고 메모리 I/O를 최적화한 방식.
+* **GPU Flash Attention**: **Tiling**과 **Online Softmax** 기법을 사용하여 SRAM(Shared Memory) 활용을 극대화하고 메모리 I/O를 최적화한 방식.
 
 
 
@@ -77,4 +74,5 @@ nvcc -o attention_test kernel.cu DS_timer.cpp -I.
 
 1. **Setting 정보**: 설정된 과  값, Score 행렬의 메모리 크기.
 2. **Verification**: CPU 결과와 GPU 결과 간의 오차 검증 (PASS/FAIL).
+
 3. **Timer Report**: 각 방식별 실행 시간(ms) 측정 결과.
